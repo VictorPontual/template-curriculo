@@ -258,52 +258,6 @@ p {
     color: #3ef7ed;
 }
 
-.trilho {
-    width: 60px;
-    height: 30px;
-    background-color: #848c90;
-    border-radius: 30px;
-    position: relative;
-    cursor: pointer;
-}
-
-.trilho .indicador {
-    width: 30px;
-    height: 30px;
-    background-color: #fff;
-    border-radius: 50%;
-    transform: scale(.9);
-    position: absolute;
-    left: 0;
-    transition: .5s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.trilho .indicador i {
-    font-size: 20px;
-}
-
-.light-dark-mode {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-}
-
-.trilho.dark {
-    background-color: #d4d4d4;
-}
-
-.trilho.dark .indicador{
-    left: 30px;
-    background-color: #081921;
-}
-
-.trilho.dark .indicador i {
-    color: #fff;
-}
-
 body.dark {
     background-color: #505352;
 }
