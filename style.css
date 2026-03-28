@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 
+:root {
+    --a4-width: 210mm;
+    --a4-height: 297mm;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -18,11 +23,12 @@ body {
 
 .container {
     position: relative;
-    width: 100%;
-    max-width: 1080px;
-    min-height: 1000px;
+    width: var(--a4-width);
+    max-width: var(--a4-width);
+    min-height: var(--a4-height);
+    height: var(--a4-height);
     background: #fff;
-    margin: 50px;
+    margin: 20px;
     display: grid;
     grid-template-columns: 1fr 2fr;
     box-shadow: 0 35px 55px rgb(0, 0, 0, 0.1);
@@ -300,6 +306,10 @@ body.dark .interest ul li {
     @media (max-width: 1080px) {
         .container {
             margin: 10px;
+            width: 100%;
+            max-width: 100%;
+            min-height: auto;
+            height: auto;
             grid-template-columns: repeat(1, 1fr);
         }
         .interest ul {
@@ -327,20 +337,36 @@ body.dark .interest ul li {
 @media print {
 
     @page {
-        margin: 10px;
+        size: A4 portrait;
+        margin: 0;
+    }
+
+    html,
+    body {
+        width: var(--a4-width);
+        height: var(--a4-height);
+        margin: 0;
+        padding: 0;
     }
 
     body{
         -webkit-print-color-adjust:exact !important;
         print-color-adjust:exact !important;
+        background: #fff;
+        display: block;
+        min-height: auto;
     }
     
     .container {
+        width: var(--a4-width);
+        max-width: var(--a4-width);
+        min-height: var(--a4-height);
+        height: var(--a4-height);
         margin: 0;
         padding: 0;
         border: 0;
         box-shadow: none;
-        min-height: 100%;
+        overflow: hidden;
     }
 
     .container .left_side {
